@@ -1,9 +1,20 @@
 # 1. Accomplishments So Far
-- Successfully built core functionalities for the social media platform, including user authentication, post creation, updating, and deletion.
-- Database Integration: Configured PostgreSQL as the production database and ensured smooth connection.
-- Django REST Framework: Implemented RESTful endpoints for seamless interaction with frontend and third-party services.
-- Deployment Preparations: Started configuring production settings, including security enhancements and environment variables management.
-- Local Development Setup: Established a virtual environment and installed necessary dependencies.
+- **User Management**: Created user registration, login, and profile management using Django's built-in auth system.
+- **Posts Module**: Users can create, edit, delete, and list their posts.
+- **Notifications**: Integrated a simple notification system for key events (e.g., new followers or post likes).
+- **Database Setup**:
+  - Currently using **SQLite** in development.
+  - **PostgreSQL** installed but **not yet fully configured** for production.
+- **API Development**:
+  - RESTful endpoints implemented using **Django REST Framework (DRF)**.
+  - Includes pagination, filtering, and token authentication.
+- **Environment Configuration**:
+  - Created a `.env` file for sensitive settings.
+  - Introduced `django-environ` for environment-based configuration.
+- **Initial Deployment Steps**:
+  - Preparing production settings (allowed hosts, secret keys, static files).
+- **Virtual Environment Setup**:
+  - Used `venv` to isolate dependencies and Python packages.
 
 # 2. Challenges Faced and Solutions
 - Missing Dependencies: Faced errors due to missing libraries (e.g., `rest_framework`, `dj_database_url`).
@@ -15,11 +26,44 @@
 - ModuleNotFoundError for Django: Encountered issues running `python manage.py runserver`.
   - *Solution*: Verified Django installation inside the virtual environment and ensured correct Python interpreter selection in VS Code.
 
-# 3. What’s Next? – Plan for the Upcoming Week
-- Complete Deployment: Finalize hosting the API on a cloud platform (Heroku, AWS, or DigitalOcean).
-- Testing & Debugging: Conduct thorough testing to identify and fix any remaining bugs.
-- Performance Optimization: Improve database queries and implement caching strategies.
-- Documentation: Enhance API documentation using Swagger or Postman for better usability.
+## 3. What’s Next? – Weekly Roadmap
 
-This progress update serves as a checkpoint to track milestones and address pending tasks effectively. Looking forward to a productive week ahead!
+- **✅ Finalize PostgreSQL Configuration**:
+  - Update `DATABASES` in `settings.py`
+  - Use `psycopg2` as the DB adapter
+- **✅ Deployment**:
+  - Choose hosting platform: Heroku, Render, DigitalOcean, or AWS
+  - Set up production settings
+- **🔍 Testing & Debugging**:
+  - Add unit tests using Django’s test suite
+  - Check for edge cases in API calls
+- **📊 Performance Optimization**:
+  - Use `select_related()` and `prefetch_related()` in queries
+  - Add caching (e.g., Redis)
+- **📚 Documentation**:
+  - Auto-generate docs with Swagger or Postman
+  - Write clear endpoint usage instructions for frontend devs
+- **📦 API Versioning**:
+  - Plan for `/api/v1/` structure in future updates
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend**: Python, Django, Django REST Framework
+- **Database**: SQLite (dev), PostgreSQL (prod - in progress)
+- **Authentication**: Token-based (DRF’s TokenAuth)
+- **Environment Management**: `python-dotenv`, `django-environ`
+- **Virtual Environment**: `venv`
+- **Deployment (upcoming)**: Heroku / DigitalOcean / Render
+
+---
+
+## ⚙️ Environment Setup
+
+### 4. Clone the Repo
+
+```bash
+git clone https://github.com/yourusername/social_media_api.git
+cd social_media_api
 
